@@ -1,0 +1,12 @@
+version: '3'
+services:
+  voids-client:
+    build: ./voidsfrontend
+    ports:
+      - 3001:3000
+  voids-server:
+    build: ./voidsbackend
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
