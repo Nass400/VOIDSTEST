@@ -1,0 +1,21 @@
+version: "3"
+services:
+  wiwi-api:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGO_USER=nassim
+      - MONGO_PASSWORD=nass400
+      - SESSION_SECRET=secret
+
+    command: npm run test
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nassim
+      - MONGO_INITDB_ROOT_PASSWORD=nass400
