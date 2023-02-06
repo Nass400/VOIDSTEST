@@ -9,8 +9,6 @@ const client = new Client({
   });
 
 
-
-    
     
     try {
             client.connect()

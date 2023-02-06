@@ -19,7 +19,8 @@ class UserService {
             const twoWeeksFromNow = moment().add(14, 'days').format('YYYY-MM-DD');
             const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?startDate=${Now}&endDate=${twoWeeksFromNow}&unitGroup=metric&aggregateHours=24&contentType=json&key=3WWEVYKLNRDJ4DHHK7ASL5XFF`;
             const result = await axios.get(url);
-            return ({result})
+
+            return (result.data.days)
         } catch (err) {
             console.log(err)
         }

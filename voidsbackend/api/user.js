@@ -144,8 +144,8 @@ app.get('/weather/:location', async (req,res,next) => {
         
     try {
           const { location } = req.params;
-          const { result } = await service.weatherByLocation({location}); 
-          res.send(result.data);
+          const  result  = await service.weatherByLocation({location}); 
+          res.send(result);
       } catch (err) {
           next(err)
       }
