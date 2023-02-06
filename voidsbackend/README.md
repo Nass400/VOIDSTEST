@@ -1,2 +1,1 @@
-# wiwi_project
 
