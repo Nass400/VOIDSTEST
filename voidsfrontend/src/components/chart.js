@@ -37,7 +37,7 @@ const ChartComponent = () => {
       .then(res => res.json())
       .then(data => setForecastData(data));
 
-    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&aggregateHours=24&contentType=json&key=3WWEVYKLNRDJ4DHHK7ASL5XFF`)
+    fetch(`http://localhost:3000/weather/${location}`)
       .then(res => res.json())
       .then(data => setWeatherData(data));
 
@@ -60,7 +60,7 @@ const ChartComponent = () => {
         backgroundColor: "#2196F3",
         borderColor: "#2196F3",
       },
-      // { label: "weatherData", data: weatherData.days.map(d => d.temp), backgroundColor: "#FFCA29", borderColor: "#FFCA29", }
+      { label: "weatherData", data: weatherData.map(d => d.temp), backgroundColor: "#FFCA29", borderColor: "#FFCA29", }
      
     ],
   };
